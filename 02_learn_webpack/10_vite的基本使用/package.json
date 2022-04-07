@@ -1,0 +1,22 @@
+{
+  "name": "vite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^4.1.2",
+    "lodash-es": "^4.17.21",
+    "postcss": "^8.4.6",
+    "postcss-preset-env": "^7.3.1",
+    "vite": "^2.7.13"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^2.1.0",
+    "vue": "^3.2.29"
+  }
+}

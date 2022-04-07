@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <template id="coder">
+    <ul v-if="isShow">
+      <li v-for="item in list">{{item.name}}</li>
+      <!-- <li v-for="item in list" v-if="isShow">{{item.age}}</li> -->
+    </ul>
+  </template>
+  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        list: [{
+            name: 'coder',
+            age: 18
+          },
+          {
+            name: 'curry',
+            age: 38
+          },
+          {
+            name: 'kobe',
+            age: 28
+          },
+          {
+            name: 'james',
+            age: 38
+          }
+        ],
+        isShow: false
+      },
+      template: '#coder'
+    })
+    console.log(vm.$options.render)
+  </script>
+
+  <!-- v-if和v-show在同一个标签内部 -->
+  <!-- -l每次都会先渲染，在判断 v-for的优先级高  -->
+  <!-- with(this){return _c('ul',_l((list),function(item){return (isShow)?_c('li',[_v(_s(item.name))]):_e()}))} -->
+
+  <!-- v-if和v-for不在同一个标签 -->
+  <!-- 先判断在渲染 -->
+  <!-- with(this){return (isShow)?_c('ul',_l((list),function(item){return _c('li',[_v(_s(item.name))])})):_e()} -->
+</body>
+
+</html>

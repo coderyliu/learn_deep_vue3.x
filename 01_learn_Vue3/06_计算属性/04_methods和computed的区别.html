@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- // 计算属性是有缓存的, 当我们多次使用计算属性时, 计算属性中的运算只会执行一次.
+        // 计算属性会随着依赖的数据(firstName)的改变, 而进行重新计算. -->
+  <template id='liu'>
+    <!-- 计算属性 -->
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <!-- <h2>{{Score}}</h2>
+    <h2>{{messageReverse}}</h2> -->
+
+    <hr>
+    <button @click='toggle'>按钮</button>
+    <!-- methods方法 -->
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <!-- <h2>{{getScore()}}</h2>
+    <h2>{{getMessageReverse()}}</h2> -->
+  </template>
+
+  <script src='../js/vue.js'></script>
+
+  <script>
+    const App = {
+      template: '#liu',
+      data() {
+        return {
+          message: 'Hello World',
+          firstName: 'kobe',
+          lastName: 'curry',
+          score: 70
+        }
+      },
+      methods: {
+        getFullName() {
+          console.log('methods方法');
+          return this.firstName + ' ' + this.lastName
+        },
+        getScore() {
+          return this.score > 60 ? '及格' : '不及格'
+        },
+        getMessageReverse() {
+          return this.message.split(' ').reverse().join(' ')
+        },
+        toggle() {
+          this.firstName = 'james'
+        }
+      },
+      computed: {
+        fullName() {
+          console.log('计算属性');
+          return this.firstName + ' ' + this.lastName
+        },
+        Score() {
+          return this.score > 60 ? '及格' : '不及格'
+        },
+        messageReverse() {
+          return this.message.split(' ').reverse().join(' ')
+        }
+      }
+    }
+
+    Vue.createApp(App).mount('#app')
+  </script>
+</body>
+
+</html>

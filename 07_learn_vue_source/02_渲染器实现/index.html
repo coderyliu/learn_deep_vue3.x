@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue3源码渲染器的实现</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./renderer.js"></script>
+  <script>
+
+    // 1.通过h函数来创建一个vNode
+    const vNode=h('div',{class:'coder',id:'bbb'},[
+      h('h2',null,'当前计数:100'),
+      h('button',{
+        onClick:()=>{}
+      },'+1')
+    ])//vDOM
+
+    console.log(vNode)
+
+    // 2.通过mount将vNode挂载到真实DOM上
+    mount(vNode,document.querySelector('#app'))
+
+    // 3.创建新的vNode
+    setTimeout(()=>{
+      const vNode1=h('div',{class:'coder liu',id:'bbb'},[
+        h('h2',null,'呵呵呵'),
+        h('button',{onClick:()=>{}},'-1')
+      ])
+
+      patch(vNode,vNode1)
+    },2000)
+  </script>
+</body>
+</html>

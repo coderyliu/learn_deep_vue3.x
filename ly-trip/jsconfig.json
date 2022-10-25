@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    // 注意：之所以能够在jsconfig.json中使用注释，是因为vscode对这个文件以及tsconfig.json特殊处理过
+    // 把下面这行注释注释掉的原因是因为最新的vite，语法在开发环境下是建立在es6以上，会冲突
+    // "target": "es5",
+    "module": "esnext",
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "vueCompilerOptions": {
+    "experimentalDisableTemplateSupport": true
+  }
+}

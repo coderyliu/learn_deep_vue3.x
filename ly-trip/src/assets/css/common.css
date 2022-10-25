@@ -1,0 +1,10 @@
+:root {
+  --primary-color: #ff9854;
+
+  /* 全局更改Vant组件库中类名为--van-search-left-icon-color的样式,通常加上!important */
+  --van-search-left-icon-color:var(--primary-color) !important;
+}
+
+body {
+  font-size: 14px;
+}

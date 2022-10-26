@@ -2,6 +2,13 @@ import {
   loadAssets
 } from './loadAssets'
 
+import {
+  formatTime,
+  getDiffDays
+} from './formatTime'
+
 export {
-  loadAssets
+  loadAssets,
+  formatTime,
+  getDiffDays
 }

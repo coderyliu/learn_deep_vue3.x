@@ -9,12 +9,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import useCityStore from '@/store/modules/city';
+import useHomeStore from '@/store/modules/home';
 import HomeNavBar from './c-cpns/HomeNavBar.vue';
 import HomeSearchBar from './c-cpns/HomeSearchBar.vue'
 
-const cityStore = useCityStore()
+// 首页网络数据请求
+const homeStore = useHomeStore()
+homeStore.fetchHomeRecommendLocaltionAction()
 
 </script>
 

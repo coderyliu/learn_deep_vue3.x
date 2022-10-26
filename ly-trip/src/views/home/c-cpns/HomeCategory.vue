@@ -3,7 +3,7 @@
     <template v-for="item in categories" :key="item.id">
       <div class="item">
         <img :src="item.pictureUrl" alt="">
-        <span class="text">{{                              item.title                              }}</span>
+        <span class="text">{{ item.title }}</span>
       </div>
     </template>
   </div>
@@ -27,7 +27,7 @@ const { categories } = storeToRefs(homeStore)
   width: 100vw;
   height: 80px;
   margin-top: 5px;
-  padding:0 8px;
+  padding: 0 8px;
   box-sizing: border-box;
 
   overflow-x: auto;

@@ -3,10 +3,14 @@ import {
 } from './modules/city'
 
 import {
-  getHomeRecommendLocation
+  getHomeRecommendLocation,
+  getHomeCategories,
+  getHomeHotHouseData
 } from './modules/home'
 
 export {
   getAllCitiesData,
-  getHomeRecommendLocation
+  getHomeRecommendLocation,
+  getHomeCategories,
+  getHomeHotHouseData
 }

@@ -44,6 +44,9 @@
         </div>
       </template>
     </div>
+
+    <!-- 搜索按钮 -->
+    <div class="search-btn" @click="handleSearchBtnClick">开始搜索</div>
   </div>
 </template>
 
@@ -103,6 +106,18 @@ const onDateConfirm = (values) => {
 
 // ?首页推荐位置数据获取
 const { recommendLocationInfo } = storeToRefs(homeStore)
+
+// ?搜索按钮点击
+const handleSearchBtnClick = () => {
+  router.push({
+    path:'/search',
+    query: {
+      startDate: startTime.value,
+      endDate: endTime.value,
+      currentCity:currentCity.value.cityName
+    }
+  })
+}
 
 
 </script>
@@ -167,21 +182,21 @@ const { recommendLocationInfo } = storeToRefs(homeStore)
     box-sizing: border-box;
   }
 
-  .price-counter{
+  .price-counter {
     display: flex;
     align-items: center;
 
-    .item{
-      flex:1;
-      color:#999;
+    .item {
+      flex: 1;
+      color: #999;
     }
 
-    .price{
-      flex:2;
-      border-right:1px solid rgb(250,248,249);
+    .price {
+      flex: 2;
+      border-right: 1px solid rgb(250, 248, 249);
     }
 
-    .number{
+    .number {
       text-align: center;
     }
   }
@@ -206,6 +221,17 @@ const { recommendLocationInfo } = storeToRefs(homeStore)
       font-size: 14px;
       cursor: pointer;
     }
+  }
+
+  .search-btn {
+    line-height: 40px;
+    margin-top: 15px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+
+    background-image: linear-gradient(90deg, #fa8c1d, #fcaf3f);
   }
 }
 </style>

@@ -8,7 +8,10 @@ import {
 const useCityStore = defineStore('city', {
   state: () => {
     return {
-      allCities: {}
+      allCities: {},
+      currentCity: {
+        cityName: '广州'
+      }
     }
   },
   getters: {},

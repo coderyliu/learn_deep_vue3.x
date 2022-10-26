@@ -9,7 +9,10 @@
       </van-tabs>
     </div>
     <div class="content">
-      {{ currentGroup }}
+      <!-- 这块之所以都遍历出来是为了做性能优化，通过v-show的display来做切换，这样效率就很高了，或者用虚拟列表等 -->
+      <template v-for="(value, key) in allCities" :key="key">
+        <CityGroup :group-data="value" v-show="key === contentActive"></CityGroup>
+      </template>
     </div>
   </div>
 </template>
@@ -20,6 +23,8 @@ import { useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia';
 
 import useCityStore from '@/store/modules/city'
+
+import CityGroup from './c-cpns/CityGroup.vue';
 
 const router = useRouter()
 const cityStore = useCityStore()

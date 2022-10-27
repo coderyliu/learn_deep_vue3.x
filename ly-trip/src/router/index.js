@@ -42,6 +42,14 @@ const routes = [{
     meta: {
       hiddenTabBar: true
     }
+  },
+  {
+    path: '/detail/:id',
+    name: 'detail',
+    component: () => import('../views/detail/index.vue'),
+    meta: {
+      hiddenTabBar: true
+    }
   }
 ]
 

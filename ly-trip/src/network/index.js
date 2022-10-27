@@ -8,9 +8,14 @@ import {
   getHomeHotHouseData
 } from './modules/home'
 
+import {
+  getDetailInfos
+} from './modules/detail'
+
 export {
   getAllCitiesData,
   getHomeRecommendLocation,
   getHomeCategories,
-  getHomeHotHouseData
+  getHomeHotHouseData,
+  getDetailInfos
 }

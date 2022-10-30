@@ -6,6 +6,7 @@
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
+    "jsx":"preserve",
     "paths": {
       "@/*": [
         "src/*"
@@ -18,7 +19,7 @@
       "scripthost"
     ]
   },
-  "vueCompilerOptions": {
-    "experimentalDisableTemplateSupport": true
-  }
+  // "vueCompilerOptions": {
+  //   "experimentalDisableTemplateSupport": true
+  // }
 }

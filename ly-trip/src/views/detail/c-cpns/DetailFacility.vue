@@ -1,6 +1,6 @@
 <template>
   <div class="detail-facility-wrap">
-    <SectionItem title="房屋设施" more-title="全部设施">
+    <SectionItem title="房屋设施" more-title="查看全部设施">
       <div class="inner">
         <template v-for="(item, index) in facilityInfo.houseFacilitys" :key="index">
           <div class="facility" v-if="facilityInfo.facilitySort.includes(index)">
@@ -36,10 +36,12 @@ const props = defineProps({
 
 <style lang="less" scoped>
 .detail-facility-wrap {
-  padding: 0 10px;
+  padding: 0 10px 20px;
+  border-bottom:5px solid #f2f2f2;
 
   .inner {
     padding:30px 10px;
+    margin-bottom:20px;
     border-radius: 5px;
     background-color: #f5f7fa;
     .facility {
@@ -47,6 +49,7 @@ const props = defineProps({
       justify-content: space-between;
       align-items: center;
       margin-top:10px;
+      padding-bottom:20px;
 
       .left {
         width:120px;

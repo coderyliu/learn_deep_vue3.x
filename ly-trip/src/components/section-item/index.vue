@@ -7,8 +7,8 @@
       <slot></slot>
     </div>
     <div class="bottom">  
-      <span>查看{{moreTitle}}</span>
-      <van-icon name="arrow" />
+      <span>{{moreTitle}}</span>
+      <van-icon name="arrow" v-if='moreTitle.length>0' />
     </div>
   </div>
 </template>
@@ -29,7 +29,8 @@ const props=defineProps({
 <style lang="less" scoped>
 .section-wrap{
   .top{
-    padding: 5px 0;
+    font-size:17px;
+    padding: 15px 0;
     border-bottom:1px solid #eee;
   }
 
@@ -44,6 +45,8 @@ const props=defineProps({
 
     padding:10px 0;
 
+    font-size: 16px;
+    font-weight: 600;
     color:var(--primary-color);
   }
 }

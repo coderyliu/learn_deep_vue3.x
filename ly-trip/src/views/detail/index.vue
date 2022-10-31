@@ -2,9 +2,15 @@
   <div class="detail">
     <DetailNavBar></DetailNavBar>
     <TabControl :tab-list="navBarList" @tab-click="handleTabClick" v-if="isShowNavBar"></TabControl>
-    <DetailSwiper :swiper-data="mainPart?.topModule?.housePicture?.housePics"></DetailSwiper>
-    <Detailnfos :desc-infos="mainPart?.topModule"></Detailnfos>
-    <DetailFacility :facility-info="mainPart?.dynamicModule?.facilityModule?.houseFacility"></DetailFacility>
+    <div class="mainner" v-if="mainPart">
+      <DetailSwiper :swiper-data="mainPart?.topModule?.housePicture?.housePics"></DetailSwiper>
+      <Detailnfos :desc-infos="mainPart?.topModule"></Detailnfos>
+      <DetailFacility :facility-info="mainPart?.dynamicModule?.facilityModule?.houseFacility"></DetailFacility>
+      <DetailIntroduce :introduce-info="mainPart?.dynamicModule?.landlordModule"></DetailIntroduce>
+      <DetailBook :book-info="mainPart?.dynamicModule?.rulesModule"></DetailBook>
+      <DetailPosition :position-info="mainPart?.dynamicModule?.positionModule"></DetailPosition>
+      <DetailMessage :detail-info="mainPart?.introductionModule"></DetailMessage>
+    </div>
   </div>
 </template>
 
@@ -22,6 +28,10 @@ import DetailNavBar from './c-cpns/DetailNavBar.vue';
 import DetailSwiper from './c-cpns/DetailSwiper.vue';
 import Detailnfos from './c-cpns/Detailnfos.vue';
 import DetailFacility from './c-cpns/DetailFacility.vue';
+import DetailIntroduce from './c-cpns/DetailIntroduce.vue';
+import DetailBook from './c-cpns/DetailBook.vue';
+import DetailPosition from './c-cpns/DetailPosition.vue';
+import DetailMessage from './c-cpns/DetailMessage.vue';
 
 const route = useRoute()
 const router = useRouter()
@@ -47,7 +57,7 @@ detailStore.fetchDetailInfosAction(route.params.id)
 </script>
 
 <style lang="less" scoped>
-.detail{
-  height:2000px;
+.detail {
+  height: 2000px;
 }
 </style>

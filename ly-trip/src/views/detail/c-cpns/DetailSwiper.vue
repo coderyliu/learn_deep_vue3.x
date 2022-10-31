@@ -27,21 +27,28 @@ import { storeToRefs } from 'pinia';
 
 import useDetailStore from '@/store/modules/detail';
 
+const props=defineProps({
+  swiperData:{
+    type:Array,
+    default:()=>([])
+  }
+})
+
 const detailStore = useDetailStore()
 const { detailInfos } = storeToRefs(detailStore)
 
-const swiperData = computed(() => detailInfos.value?.mainPart?.topModule?.housePicture?.housePics)
+// const swiperData = computed(() => detailInfos.value?.mainPart?.topModule?.housePicture?.housePics)
 
 // 对数据进行转换
-const swipeGroup = {}
-watch(swiperData, (newValue) => {
-  for (const item of newValue) {
-    if (!swipeGroup[item.title]) {
-      swipeGroup[item.title] = []
-    }
-    swipeGroup[item.title].push(item)
-  }
-})
+// const swipeGroup = {}
+// watch(swiperData, (newValue) => {
+//   for (const item of newValue) {
+//     if (!swipeGroup[item.title]) {
+//       swipeGroup[item.title] = []
+//     }
+//     swipeGroup[item.title].push(item)
+//   }
+// })
 
 </script>
 
@@ -49,8 +56,6 @@ watch(swiperData, (newValue) => {
 .detail-swiper-wrap {
   position: relative;
   width: 100%;
-  margin-top: 50px;
-
 
   img {
     width: 100%;

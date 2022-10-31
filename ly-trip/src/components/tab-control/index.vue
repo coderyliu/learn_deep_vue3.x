@@ -39,6 +39,7 @@ const scrollToPosition = (index) => {
   align-items: center;
   height: 44px;
   line-height: 44px;
+  background-color:#fff ;
 
   z-index:99;
 

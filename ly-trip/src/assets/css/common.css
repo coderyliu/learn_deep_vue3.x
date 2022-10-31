@@ -16,3 +16,10 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.icon_check {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url(../imgs/detail/icon_check.png) 0 0 / 100% 100%;
+}

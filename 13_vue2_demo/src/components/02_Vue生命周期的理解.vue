@@ -7,6 +7,9 @@
 
 <script>
 export default {
+  props:{
+    date:Date
+  },
   data() {
     return {
       message: '哈哈哈哈'
@@ -14,7 +17,7 @@ export default {
   },
   methods: {
     changeMessage() {
-      this.message = '呵呵呵'
+      this.message = Math.random()
     }
   },
   // vue生命周期
@@ -32,7 +35,7 @@ export default {
     console.log('created')
   },
   mounted() {
-    console.log(this)
+    console.log(this.date)
     console.log('mounted')
   },
   updated() {

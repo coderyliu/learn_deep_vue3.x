@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
-// import App from './09_具名插槽的使用/App.vue'
+import App from './08_插槽的基本使用/App.vue'
 
-import App from './15_组件v-model的实现/App.vue'
+// import App from './15_组件v-model的实现/App.vue'
 createApp(App).mount('#app')
 
 // 默认情况

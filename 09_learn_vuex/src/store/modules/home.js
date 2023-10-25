@@ -21,9 +21,14 @@ const homeModule={
   actions:{
     incrementAction(context){
       context.commit('increment')
+      context.dispatch('incrementAction', null, { root: true })
 
       // 修改或派发根的state
       context.commit('increment',null,{root:true})
+    },
+    decrementAction({ state }){
+      const { homeCounter } = state
+      console.log(homeCounter)
     }
   }
 }

@@ -1,7 +1,4 @@
 import {
-  NO
-} from '@vue/shared'
-import {
   createRouter,
   createWebHistory
 } from 'vue-router'

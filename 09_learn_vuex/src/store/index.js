@@ -32,8 +32,11 @@ const store = createStore({
   },
   actions: {
     // 默认情况下,actions的dispatch重名问题，也会全部执行
-    incrementAction(context){
-      context.commit('increment')
+    incrementAction({ state, commit }){
+      commit('increment')
+      const { homeCounter } = state.home
+
+      console.log(homeCounter)
     }
   },
   modules:{

@@ -6,16 +6,14 @@
 </template>
 
 <script>
-  import emitter from './utils/eventBus'
-  export default {
-    methods:{
-      btnClick(){
-        emitter.emit('coder',{name:'liu',age:21})
-      }
+import emitter from './utils/eventBus'
+export default {
+  methods: {
+    btnClick() {
+      emitter.emit('coder', { name: 'liu', age: 21 })
     }
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

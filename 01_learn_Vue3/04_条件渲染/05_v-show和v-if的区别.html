@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <div id="app"></div>
-  <!-- 
+  <body>
+    <div id="app"></div>
+    <!-- 
     v-if和v-show的区别：
     1-编译上:v-if如果为false,就不会对其编译生成vDOM,v-show无论如何都会被编译，在DOM上
     2-控制上:v-if是通过直接添加或删除DOM节点，v-show是通过display属性进行css样式的切换
@@ -20,29 +19,26 @@
     如果频繁地切换建议使用v-show，如果确定条件很少切换建议使用v-if
    -->
 
-  <template id='liu'>
-    <div v-if='isShow'>{{message}}</div>
-    <div v-show='isShow'>{{message}}</div>
-  </template>
+    <template id="liu">
+      <div v-if="isShow">{{message}}</div>
+      <div v-show="isShow">{{message}}</div>
+    </template>
 
-  <script src='../js/vue.js'></script>
+    <script src="../js/vue.js"></script>
 
-  <script>
-    const App = {
-      template: '#liu',
-      data() {
-        return {
-          message: 'Hello World',
-          isShow:false
-        }
-      },
-      methods: {
+    <script>
+      const App = {
+        template: "#liu",
+        data() {
+          return {
+            message: "Hello World",
+            isShow: false,
+          };
+        },
+        methods: {},
+      };
 
-      },
-    }
-
-    Vue.createApp(App).mount('#app')
-  </script>
-</body>
-
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
 </html>

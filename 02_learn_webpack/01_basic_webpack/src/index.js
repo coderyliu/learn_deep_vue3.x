@@ -1,7 +1,7 @@
-const {age}=require('./js/foo')
+const { age } = require("./js/foo");
 
-import {add} from './js/math'
+import { add } from "./js/math";
 
-add()
+add();
 
-console.log(age)
+console.log(age);

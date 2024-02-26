@@ -23,7 +23,7 @@
     <!-- <keep-alive :include="/home|about/">
       <component :is="currentTab" :name="name" :age="age" @btn="btnClick"></component>
     </keep-alive> -->
-    <keep-alive :include="['home','about']">
+    <keep-alive :include="['home', 'about']">
       <component :is="currentTab" :name="name" :age="age" @btn="btnClick"></component>
     </keep-alive>
   </div>

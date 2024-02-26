@@ -4,25 +4,23 @@
 </template>
 
 <script>
-  import emitter from './utils/eventBus';
+import emitter from './utils/eventBus';
 
-  export default {
-    created() {
-      emitter.on("why", (info) => {
-        console.log("why:", info);
-      });
+export default {
+  created() {
+    emitter.on("why", (info) => {
+      console.log("why:", info);
+    });
 
-      emitter.on("kobe", (info) => {
-        console.log("kobe:", info);
-      });
+    emitter.on("kobe", (info) => {
+      console.log("kobe:", info);
+    });
 
-      emitter.on("*", (type, info) => {
-        console.log("* listener:", type, info);
-      })
-    }
+    emitter.on("*", (type, info) => {
+      console.log("* listener:", type, info);
+    })
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

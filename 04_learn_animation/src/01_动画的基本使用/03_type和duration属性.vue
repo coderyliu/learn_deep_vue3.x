@@ -10,50 +10,52 @@
 
 <script>
 export default {
-  data(){
+  data() {
     return {
-      isShow:true
+      isShow: true
     }
   }
 };
 </script>
 
 <style scoped>
-.app{
+.app {
   width: 200px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
-.title{
+.title {
   display: inline-block
 }
+
 .coder-enter-from,
-.coder-leave-to{
-  opacity:0;
+.coder-leave-to {
+  opacity: 0;
 }
 
 .coder-enter-active,
-.coder-leave-active{
-  transition:opacity 1s ease;
+.coder-leave-active {
+  transition: opacity 1s ease;
 }
 
-.coder-enter-active{
+.coder-enter-active {
   animation: bounce 2s ease;
 }
-.coder-leave-active{
+
+.coder-leave-active {
   animation: bounce 2s ease reverse;
 }
 
-@keyframes bounce{
-  0%{
+@keyframes bounce {
+  0% {
     transform: scale(0);
   }
 
-  50%{
+  50% {
     transform: scale(1.2);
   }
 
-  100%{
+  100% {
     transform: scale(1);
   }
 }

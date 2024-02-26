@@ -1,36 +1,34 @@
 <template>
   <div>
-    <h2>{{counter}}</h2>
+    <h2>{{ counter }}</h2>
     <counter-options @add='add' @sub='sub' @addN='addNumber'></counter-options>
   </div>
 </template>
 
 <script>
-  import CounterOptions from './CounterOptions.vue'
-  export default {
-    data(){
-      return {
-        counter:0
-      }
+import CounterOptions from './CounterOptions.vue'
+export default {
+  data() {
+    return {
+      counter: 0
+    }
+  },
+  components: {
+    CounterOptions
+  },
+  methods: {
+    add() {
+      this.counter++
     },
-    components:{
-      CounterOptions
+    sub() {
+      this.counter--
     },
-    methods:{
-      add(){
-        this.counter++
-      },
-      sub(){
-        this.counter--
-      },
-      addNumber(num,name,age){
-        this.counter+=num
-        console.log(name,age);
-      }
+    addNumber(num, name, age) {
+      this.counter += num
+      console.log(name, age);
     }
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

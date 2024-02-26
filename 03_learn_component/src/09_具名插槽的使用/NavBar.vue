@@ -19,26 +19,30 @@
 </template>
 
 <script>
-  export default {
-    props:{
-      name:String
-    }
+export default {
+  props: {
+    name: String
   }
+}
 </script>
 
 <style scoped>
-  .nav-bar{
-    display:flex;
-    width: 600px;
-    border:1px solid #eee;
-  }
+.nav-bar {
+  display: flex;
+  width: 600px;
+  border: 1px solid #eee;
+}
 
-  .left ,.center, .right, .content{
-    flex:1;
-    text-align: center;
-    margin-left:5px;
-  }
-  .left ,h2{
-   color: #bfa;
-  }
-</style>
+.left,
+.center,
+.right,
+.content {
+  flex: 1;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.left,
+h2 {
+  color: #bfa;
+}</style>

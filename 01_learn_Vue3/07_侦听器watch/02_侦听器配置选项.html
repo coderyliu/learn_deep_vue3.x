@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <body>
+    <div id="app"></div>
 
-<body>
-  <div id="app"></div>
+    <template id="liu">
+      <h2>{{info.name}}</h2>
+      <button @click="changeInfo">改变info</button>
+      <button @click="changeInfoName">改变info.name</button>
+      <button @click="changeInfoNbaName">改变info.nba.name</button>
+    </template>
 
-  <template id='liu'>
-    <h2>{{info.name}}</h2>
-    <button @click="changeInfo">改变info</button>
-    <button @click="changeInfoName">改变info.name</button>
-    <button @click="changeInfoNbaName">改变info.nba.name</button>
-  </template>
+    <script src="../js/vue.js"></script>
 
-  <script src='../js/vue.js'></script>
-
-  <script>
-    const App = {
-      template: '#liu',
-      data() {
-        return {
-          message: 'Hello World',
-          info:{name:'liu',age:18,nba:{name:'kobe'}}
-        }
-      },
-      methods: {
-        changeInfo(){
-          this.info={name:'curry'}
+    <script>
+      const App = {
+        template: "#liu",
+        data() {
+          return {
+            message: "Hello World",
+            info: { name: "liu", age: 18, nba: { name: "kobe" } },
+          };
         },
-        changeInfoName(){
-          this.info.name='weide'
-        },
-        changeInfoNbaName(){
-          this.info.nba.name='qiaodan'
-        }
-      },
-      watch:{
-        // 默认情况下，我们的侦听器只能监听数据本身的引用值，对于内部的变化是无法监听的
-        // info(newInfo,oldInfo){
-        //   console.log('新值:',newInfo,'旧值:',oldInfo)
-        // }
-        info:{
-          handler(newInfo,oldInfo){
-            console.log('新值:',newInfo,'旧值:',oldInfo)
+        methods: {
+          changeInfo() {
+            this.info = { name: "curry" };
           },
-          // 深度侦听
-          deep:true
-        }
-      }
-    }
+          changeInfoName() {
+            this.info.name = "weide";
+          },
+          changeInfoNbaName() {
+            this.info.nba.name = "qiaodan";
+          },
+        },
+        watch: {
+          // 默认情况下，我们的侦听器只能监听数据本身的引用值，对于内部的变化是无法监听的
+          // info(newInfo,oldInfo){
+          //   console.log('新值:',newInfo,'旧值:',oldInfo)
+          // }
+          info: {
+            handler(newInfo, oldInfo) {
+              console.log("新值:", newInfo, "旧值:", oldInfo);
+            },
+            // 深度侦听
+            deep: true,
+          },
+        },
+      };
 
-    Vue.createApp(App).mount('#app')
-  </script>
-</body>
-
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
 </html>

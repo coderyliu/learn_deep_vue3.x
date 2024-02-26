@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <body>
+    <div id="app"></div>
 
-<body>
-  <div id="app"></div>
+    <template id="liu">
+      1:<input type="text" v-model="message" />
+      <hr />
+      <!-- 1.v-bind value的绑定 2.监听input事件, 更新message的值 -->
+      2:<input type="text" :value="message" @input="inputChange" />
+      <h1>{{message}}</h1>
+    </template>
 
-  <template id='liu'>
-    1:<input type="text" v-model="message">
-    <hr>
-     <!-- 1.v-bind value的绑定 2.监听input事件, 更新message的值 -->
-    2:<input type="text" :value="message" @input="inputChange">
-    <h1>{{message}}</h1>
-  </template>
+    <script src="../js/vue.js"></script>
 
-  <script src='../js/vue.js'></script>
+    <script>
+      // console.log(new String('foo').toString());
+      const App = {
+        template: "#liu",
+        data() {
+          return {
+            message: "Hello World",
+          };
+        },
+        methods: {
+          inputChange(event) {
+            this.message = event.target.value;
+          },
+        },
+      };
 
-  <script>
-    // console.log(new String('foo').toString());
-    const App = {
-      template: '#liu',
-      data() {
-        return {
-          message: 'Hello World'
-        }
-      },
-      methods: {
-        inputChange(event) {
-          this.message = event.target.value
-        }
-      },
-    }
-
-    Vue.createApp(App).mount('#app')
-  </script>
-</body>
-
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
 </html>

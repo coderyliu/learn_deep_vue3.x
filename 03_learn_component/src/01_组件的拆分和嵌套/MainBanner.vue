@@ -5,11 +5,9 @@
 </template>
 
 <script>
-  export default {
-    name:'MainBanner'
-  }
+export default {
+  name: 'MainBanner'
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

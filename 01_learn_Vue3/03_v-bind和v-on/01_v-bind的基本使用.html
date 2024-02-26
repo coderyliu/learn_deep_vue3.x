@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app"></div>
 
     <!-- vue2 template模板中只能有一个根元素 -->
     <!-- vue3 是允许template中有多个根元素 -->
-    <template id='liu'>
-        <div style="color:red">{{message}}</div>
-        <img :src="imgUrl" alt="">
-        <a :href="hrefUrl">百度一下</a>
+    <template id="liu">
+      <div style="color: red">{{message}}</div>
+      <img :src="imgUrl" alt="" />
+      <a :href="hrefUrl">百度一下</a>
     </template>
 
-    <script src='../js/vue.js'></script>
+    <script src="../js/vue.js"></script>
 
     <script>
-        const App = {
-            template: '#liu',
-            data() {
-                return {
-                    message: 'Hello World',
-                    imgUrl: 'https://avatars.githubusercontent.com/u/10335230?s=60&v=4',
-                    hrefUrl: 'http://www.baidu.com'
-                }
-            },
-            methods: {
+      const App = {
+        template: "#liu",
+        data() {
+          return {
+            message: "Hello World",
+            imgUrl: "https://avatars.githubusercontent.com/u/10335230?s=60&v=4",
+            hrefUrl: "http://www.baidu.com",
+          };
+        },
+        methods: {},
+      };
 
-            },
-        }
-
-        Vue.createApp(App).mount('#app')
+      Vue.createApp(App).mount("#app");
     </script>
-</body>
-
+  </body>
 </html>

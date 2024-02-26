@@ -25,27 +25,29 @@ export default {
   width: 200px;
   margin: 0 auto;
 }
+
 .title {
   display: inline-block;
 }
-.coder-enter-active{
+
+.coder-enter-active {
   animation: bounce 1s ease;
 }
-.coder-leave-active{
+
+.coder-leave-active {
   animation: bounce 1s ease reverse;
 }
 
-@keyframes bounce{
-  0%{
+@keyframes bounce {
+  0% {
     transform: scale(0);
   }
 
-  50%{
+  50% {
     transform: scale(1.2);
   }
 
-  100%{
+  100% {
     transform: scale(1);
   }
-}
-</style>
+}</style>

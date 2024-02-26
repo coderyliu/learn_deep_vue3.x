@@ -9,8 +9,8 @@
     <my-input v-model='message' v-model:title='title'></my-input>
     <!-- 等价于 -->
     <!-- <my-input :model-value='message' @update:model-value='message=$event'></my-input> -->
-    <h2>{{message}}</h2>
-    <h2>{{title}}</h2>
+    <h2>{{ message }}</h2>
+    <h2>{{ title }}</h2>
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       message: "呵呵呵",
-      title:'嘻嘻嘻'
+      title: '嘻嘻嘻'
     };
   },
 };

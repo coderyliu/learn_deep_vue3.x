@@ -1,7 +1,9 @@
 <template>
   <div>
     <h2>slot开始</h2>
-    <slot><h2>我是插槽的没默认内容</h2></slot>
+    <slot>
+      <h2>我是插槽的没默认内容</h2>
+    </slot>
 
     <!-- 多个插槽 -->
     <slot name="default"></slot>
@@ -11,11 +13,9 @@
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {
+
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

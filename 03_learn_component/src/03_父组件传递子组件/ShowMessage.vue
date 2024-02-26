@@ -19,7 +19,12 @@ export default {
       default: "啧啧啧",
     },
   },
-   inheritAttrs:false,
+  inheritAttrs: false,
+  created() {
+    // attrs为未被组件声明为props或者emits的属性，最常见的为style、class、id等
+    // !通过inheritAttrs=false来禁止继承，$attrs.class可以获取到class属性
+    console.log(this.$attrs)
+  }
 };
 </script>
 

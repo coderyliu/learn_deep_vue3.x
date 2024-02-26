@@ -1,31 +1,35 @@
-const path = require('path')
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.join(__dirname, 'build'),
-    filename: 'bundle.js'
+    path: path.join(__dirname, "build"),
+    filename: "bundle.js",
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader','postcss-loader'
-        // {
-        //   loader:'postcss-loader',
-        //   options:{
-        //     postcssOptions:{
-        //       plugins:[
-        //         require('autoprefixer')
-        //       ]
-        //     }
-        //   }
-        // }
-      ]
+        use: [
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
+          // {
+          //   loader:'postcss-loader',
+          //   options:{
+          //     postcssOptions:{
+          //       plugins:[
+          //         require('autoprefixer')
+          //       ]
+          //     }
+          //   }
+          // }
+        ],
       },
       {
         test: /\.less$/,
-        use: ['style-loader', 'css-loader', 'less-loader']
-      }
-    ]
-  }
-}
+        use: ["style-loader", "css-loader", "less-loader"],
+      },
+    ],
+  },
+};

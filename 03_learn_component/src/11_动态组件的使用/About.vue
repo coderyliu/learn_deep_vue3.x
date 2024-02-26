@@ -7,18 +7,18 @@
 
 <script>
 export default {
-  name:'about',
-  data(){
+  name: 'about',
+  data() {
     return {
-      counter:0
+      counter: 0
     }
   },
   methods: {
-    increment(){
+    increment() {
       this.counter++
     }
   },
-  activated(){
+  activated() {
     console.log('About activated')
   },
   deactivated() {

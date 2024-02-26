@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app"></div>
 
-    <template id='liu'>
-        <div v-once>{{counter}}</div>
-        <button @click='increment'>+1</button>
+    <template id="liu">
+      <div v-once>{{counter}}</div>
+      <button @click="increment">+1</button>
     </template>
 
-    <script src='../js/vue.js'></script>
+    <script src="../js/vue.js"></script>
 
     <script>
-        const App = {
-            template: '#liu',
-            data() {
-                return {
-                    message: 'Hello World',
-                    counter: 100
-                }
-            },
-            methods: {
-                increment() {
-                    this.counter++
-                }
-            },
-        }
+      const App = {
+        template: "#liu",
+        data() {
+          return {
+            message: "Hello World",
+            counter: 100,
+          };
+        },
+        methods: {
+          increment() {
+            this.counter++;
+          },
+        },
+      };
 
-        Vue.createApp(App).mount('#app')
+      Vue.createApp(App).mount("#app");
     </script>
-</body>
-
+  </body>
 </html>

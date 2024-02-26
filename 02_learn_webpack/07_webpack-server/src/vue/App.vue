@@ -13,7 +13,7 @@ export default {
     return {
       message: "hello kobe",
       title: "curry",
-      desc:'Jake'
+      desc: 'Jake'
     };
   },
 };
@@ -21,6 +21,6 @@ export default {
 
 <style>
 h2 {
-  color:#bfa;
+  color: #bfa;
 }
 </style>

@@ -1,9 +1,9 @@
-import '../css/test.css'
-import '../css/title.less'
+import "../css/test.css";
+import "../css/title.less";
 
-const divEl=document.createElement('div')
+const divEl = document.createElement("div");
 
-divEl.className='title'
-divEl.innerHTML='你好啊,李银河'
+divEl.className = "title";
+divEl.innerHTML = "你好啊,李银河";
 
-document.body.appendChild(divEl)
+document.body.appendChild(divEl);

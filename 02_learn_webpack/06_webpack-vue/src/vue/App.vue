@@ -19,6 +19,6 @@ export default {
 
 <style>
 h2 {
-  color:#bfa;
+  color: #bfa;
 }
 </style>

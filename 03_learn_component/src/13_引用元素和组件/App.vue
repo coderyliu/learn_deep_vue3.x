@@ -26,11 +26,11 @@ export default {
       console.log(this.$refs.mes); //得到的是ref属性为mes的这个DOM元素
       console.log(this.$refs.mes.className); //还可以获得这个元素的属性
     },
-    getInstance(){
+    getInstance() {
       console.log(this.$refs.instance)//获取组件实例
       console.log(this.$refs.instance.$el)//$el使用来获取组建的根元素
     },
-    getData(){
+    getData() {
       console.log(this.$refs.instance.title)
       console.log(this.$refs.instance.output())
     }

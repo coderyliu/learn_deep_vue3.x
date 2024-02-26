@@ -20,7 +20,7 @@
 <script>
 import MySlotCpn from "./MySlotCpn.vue";
 export default {
-  components:{
+  components: {
     MySlotCpn
   }
 };

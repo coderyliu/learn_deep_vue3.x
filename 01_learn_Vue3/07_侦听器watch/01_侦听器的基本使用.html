@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <body>
+    <div id="app"></div>
 
-<body>
-  <div id="app"></div>
+    <template id="liu">
+      你的问题:<input type="text" v-model="question" />
+      <button @click="queryAnswer">查找答案</button>
+    </template>
 
-  <template id='liu'>
-    你的问题:<input type="text" v-model="question">
-    <button @click="queryAnswer">查找答案</button>
-  </template>
+    <script src="../js/vue.js"></script>
 
-  <script src='../js/vue.js'></script>
+    <script>
+      const App = {
+        template: "#liu",
+        data() {
+          return {
+            message: "Hello World",
+            question: "",
+            answer: "",
+          };
+        },
+        methods: {
+          queryAnswer() {
+            console.log(`你的问题${this.question}的答案是hahaha`);
+            this.answer = "";
+          },
+        },
+        watch: {
+          question(newValue, oldValue) {
+            console.log(newValue, oldValue);
+          },
+        },
+      };
 
-  <script>
-    const App = {
-      template: '#liu',
-      data() {
-        return {
-          message: 'Hello World',
-          question:'',
-          answer:''
-        }
-      },
-      methods: {
-        queryAnswer(){
-          console.log(`你的问题${this.question}的答案是hahaha`)
-          this.answer=''
-        }
-      },
-      watch:{
-        question(newValue,oldValue){
-          console.log(newValue,oldValue)
-        }
-      }
-    }
-
-    Vue.createApp(App).mount('#app')
-  </script>
-</body>
-
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
 </html>

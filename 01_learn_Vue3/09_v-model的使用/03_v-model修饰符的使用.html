@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <body>
+    <div id="app"></div>
 
-<body>
-  <div id="app"></div>
+    <template id="liu">
+      <!-- 1.lazy修饰符 -->
+      <input type="text" v-model.lazy="message" />
+      <h2>{{message}}</h2>
 
-  <template id='liu'>
-    
-    <!-- 1.lazy修饰符 -->
-    <input type="text" v-model.lazy="message">
-    <h2>{{message}}</h2>
+      <!-- 2.number修饰符 -->
+      <input type="text" name="" v-model.number="message" />
+      <h2>{{typeof message}}</h2>
 
-    <!-- 2.number修饰符 -->
-    <input type="text" name="" v-model.number="message">
-    <h2>{{typeof message}}</h2>
+      <!-- 3.trim修饰符 -->
+      <input type="text" v-model.trim="intro" />
+      <h2>{{intro}}</h2>
+    </template>
 
-    <!-- 3.trim修饰符 -->
-    <input type="text" v-model.trim="intro">
-    <h2>{{intro}}</h2>
-  </template>
+    <script src="../js/vue.js"></script>
 
-  <script src='../js/vue.js'></script>
+    <script>
+      const App = {
+        template: "#liu",
+        data() {
+          return {
+            message: "Hello World",
+            intro: "    hello     ",
+          };
+        },
+        methods: {},
+      };
 
-  <script>
-    const App = {
-      template: '#liu',
-      data() {
-        return {
-          message: 'Hello World',
-          intro:'    hello     '
-        }
-      },
-      methods: {
-
-      },
-    }
-
-    Vue.createApp(App).mount('#app')
-  </script>
-</body>
-
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
 </html>

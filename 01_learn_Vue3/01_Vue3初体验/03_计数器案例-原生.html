@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <h2 class='counter'></h2>
-    <button class='increment'>+1</button>
+  <body>
+    <h2 class="counter"></h2>
+    <button class="increment">+1</button>
     <button class="decrement">-1</button>
 
     <script>
-        // 1.获取元素
-        const countEl = document.querySelector('.counter')
-        const incrementEl = document.querySelector('.increment')
-        const decrementEl = document.querySelector('.decrement')
+      // 1.获取元素
+      const countEl = document.querySelector(".counter");
+      const incrementEl = document.querySelector(".increment");
+      const decrementEl = document.querySelector(".decrement");
 
-        // 2.创建变量
-        let counter = 0
-        countEl.innerHTML = counter
+      // 2.创建变量
+      let counter = 0;
+      countEl.innerHTML = counter;
 
-        // 3.绑定事件
-        incrementEl.addEventListener('click', () => {
-            counter++
-            countEl.innerHTML = counter
-        })
+      // 3.绑定事件
+      incrementEl.addEventListener("click", () => {
+        counter++;
+        countEl.innerHTML = counter;
+      });
 
-        decrementEl.addEventListener('click', () => {
-            counter--
-            countEl.innerHTML = counter
-        })
+      decrementEl.addEventListener("click", () => {
+        counter--;
+        countEl.innerHTML = counter;
+      });
     </script>
-</body>
-
+  </body>
 </html>

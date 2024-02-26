@@ -1,5 +1,4 @@
-
-const age=18
-module.exports={
-  age
-}
+const age = 18;
+module.exports = {
+  age,
+};

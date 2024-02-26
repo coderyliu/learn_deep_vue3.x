@@ -1,8 +1,10 @@
-import { createApp } from 'vue'
-import App from './08_插槽的基本使用/App.vue'
+import { createApp } from "vue";
+// import App from "./02_组件的css作用域/App.vue";
+// import App from "./03_父组件传递子组件/App.vue";
+// import App from "./08_插槽的基本使用/App.vue";
 
-// import App from './15_组件v-model的实现/App.vue'
-createApp(App).mount('#app')
+import App from "./15_组件v-model的实现/App.vue";
+createApp(App).mount("#app");
 
 // 默认情况
 // import {sum} from './12_异步组件的使用/utils/math'

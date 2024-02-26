@@ -1,17 +1,17 @@
-const {age}=require('./js/foo')
+const { age } = require("./js/foo");
 
-import {add} from './js/math'
+import { add } from "./js/math";
 
-import {createApp} from 'vue'
-import App from './vue/App.vue'
+import { createApp } from "vue";
+import App from "./vue/App.vue";
 
-import './js/component'
+import "./js/component";
 
-add()
+add();
 
-console.log(age)
+console.log(age);
 
-const app=createApp(
+const app = createApp(
   // template:'<h2>你好啊,李银河!!!</h2>',
   // data(){
   //   return {
@@ -19,5 +19,5 @@ const app=createApp(
   //   }
   // }
   App
-)
-app.mount('#app')
+);
+app.mount("#app");

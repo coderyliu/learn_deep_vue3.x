@@ -14,7 +14,7 @@
       </template> -->
 
       <!-- v-slot语法糖 -->
-       <template #left>
+      <template #left>
         <h2>我是left</h2>
       </template>
 
@@ -35,19 +35,17 @@
 </template>
 
 <script>
-  import NavBar from './NavBar.vue'
-  export default {
-    components:{
-      NavBar
-    },
-    data(){
-      return {
-        name:'coder'
-      }
+import NavBar from './NavBar.vue'
+export default {
+  components: {
+    NavBar
+  },
+  data() {
+    return {
+      name: 'coder'
     }
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

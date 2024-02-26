@@ -11,26 +11,26 @@
 export default {
   props: {
     modelValue: String,
-    title:String
+    title: String
   },
-  emits:['update:modelValue','update:title'],
-  methods:{
+  emits: ['update:modelValue', 'update:title'],
+  methods: {
 
   },
-  computed:{
-    value:{
-      set(value){
-        this.$emit('update:modelValue',value)
+  computed: {
+    value: {
+      set(value) {
+        this.$emit('update:modelValue', value)
       },
-      get(){
+      get() {
         return this.modelValue
       }
     },
-    value2:{
-      set(value){
-        this.$emit('update:title',value)
+    value2: {
+      set(value) {
+        this.$emit('update:title', value)
       },
-      get(){
+      get() {
         return this.title
       }
     }

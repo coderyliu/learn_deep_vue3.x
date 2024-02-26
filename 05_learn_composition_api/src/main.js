@@ -1,7 +1,14 @@
-import { createApp } from 'vue'
-import App from './08_setup的顶层编写方式/App.vue'
+import { createApp } from "vue";
+import App from "./08_setup的顶层编写方式/App.vue";
 
-const app=createApp(App)
+const app = createApp(App);
+
+// 自定义全局指令
+// app.directive('focus',{
+//   mounted(el){
+//     el.focus()
+//   }
+// })
 
 // app.mixin({
 //   data(){
@@ -14,4 +21,4 @@ const app=createApp(App)
 //   }
 // })
 
-app.mount('#app')
+app.mount("#app");

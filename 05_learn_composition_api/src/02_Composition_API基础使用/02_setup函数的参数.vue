@@ -27,10 +27,10 @@ export default {
   // },
 
   // setup函数的参数的注意事项：
-  //props和context两个参数的顺序不能颠倒，也不能只有一个context参数
+  // props和context两个参数的顺序不能颠倒，也不能只有一个context参数
   // 如果不适用props只使用context，那么第一个参数使用一个下划线作为占位符，否则报错 
 
-   setup(_,context) {
+  setup(_, context) {
     // console.log(props.message)
     console.log(context.attrs.id)
     console.log(context.slots)

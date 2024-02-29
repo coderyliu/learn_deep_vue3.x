@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import {ref,onMounted} from 'vue'
+import { ref, onMounted } from 'vue'
 export default {
-  setup(){
-    const title=ref(null)
+  setup() {
+    const title = ref(null)
 
-    onMounted(()=>{
+    onMounted(() => {
       title.value.focus()
     })
 

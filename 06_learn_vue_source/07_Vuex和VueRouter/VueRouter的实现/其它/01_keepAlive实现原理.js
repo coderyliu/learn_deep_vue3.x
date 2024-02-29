@@ -14,39 +14,39 @@
 // 3-destroyed  删除所有组件的缓存
 // 对应代码
 export default {
-  name:'keep-alive',
-  abstract:true,
-  props:{
-    include:{
-      type:String|Number|Array,
-      default:''
+  name: "keep-alive",
+  abstract: true,
+  props: {
+    include: {
+      type: String | RegExp | Array,
+      default: "",
     },
-    exclude:{
-      type:String|Number|Array,
-      default:''
+    exclude: {
+      type: String | RegExp | Array,
+      default: "",
     },
-    max:String
+    max: String,
   },
-  created(){
-    this.cache=Object.create(null)//对象存储VDOM
-    this.keys=[]//缓存Key
+  created() {
+    this.cache = Object.create(null); //对象存储VDOM
+    this.keys = []; //缓存Key
   },
-  mounted(){
-    this.$watch('include',(val)=>{
+  mounted() {
+    this.$watch("include", (val) => {
       // 执行相关操作
     }),
-    this.$watch('exclude',(val)=>{
+    this.$watch("exclude", (val) => {
       // 执行相关操作
-    })
+    });
   },
   destroyed() {
-    for(const key in this.cache){
+    for (const key in this.cache) {
       // 清楚各个组件的缓存,调用各个组件的destroyed方法
       // this.keys=[]
       // this.cache=null
     }
   },
-  render(){
+  render() {
     // 渲染函数
     // 1-获取keep-alive包裹的第一个子组件，判断此组件是否被Include或者exclude匹配
     // 2-exclude匹配直接返回vNode渲染成真实DOM ,如果是include接续执行
@@ -54,14 +54,12 @@ export default {
     // 4-如果没缓存过，分别在cache和keys中缓存此组件的VDOM和缓存key,并检查最大缓存数量
     // 5-将此组件的keep-alive属性设置为true
     // 6-如果是普通的vue组件会执行vNode-vDOm-patch(diff)-->真实DOM,如果是缓存组件，调用一个函数，直接把缓存真的vDOM插入到页面中
-  }
+  },
 
   // 注意:每个组件都有唯一的id，这是Vue初始化时候做的，是个数字并且会递增
-}
+};
 
 // keep-alive注意点：
 // 注意点一：用 keep-alive 包裹需要缓存的路由，但是判断条件不要写在 keep-alive 上，需要写在 router-view 上，不然会没有作用
 // 注意点二：当 router-view 有 transition 过渡动画时的写法。
 // 如果需要自定义路由的切换过渡动画，那么就需要在 router-view 上加上 transition 组件，当加上 transition 之后，HTML 层级就达到了三级，然后 transition ，keep-alive ，router-view ，v-if 这几者之间可以有多种不同的组合，在尝试了各种不同的组合之后，我发现只有一种写法可以达到缓存效果，但也有一点小瑕疵，那就是缓存的页面不会触发过渡动画，这也是一个比较遗憾的地方。
-
-

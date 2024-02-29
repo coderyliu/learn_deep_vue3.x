@@ -1,100 +1,101 @@
-import {
-  createRouter,
-  createWebHistory
-} from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 // 这种webpack打包命名法被称为魔法命名
-const Home = () => import( /*webpackChunkName:'home-chunk'*/ '../views/Home.vue')
-const About = () => import( /*webpackChunkName:'about-chunk'*/ '../views/About.vue')
-const User = () => import('../views/User.vue')
+const Home = () =>
+  import(/*webpackChunkName:'home-chunk'*/ "../views/Home.vue");
+const About = () =>
+  import(/*webpackChunkName:'about-chunk'*/ "../views/About.vue");
+const User = () => import("../views/User.vue");
 
-const Message = () => import('../views/HomeMessage.vue')
-const Shops = () => import('../views/HomeShops.vue')
-const NotFound = () => import('../views/NotFound.vue')
+const Message = () => import("../views/HomeMessage.vue");
+const Shops = () => import("../views/HomeShops.vue");
+const NotFound = () => import("../views/NotFound.vue");
 
-const Category = () => import('../views/Category.vue')
-const Login = () => import('../views/Login.vue')
+const Category = () => import("../views/Category.vue");
+const Login = () => import("../views/Login.vue");
 
-const routes = [{
-    path: '/',
-    redirect: '/home'
+const routes = [
+  {
+    path: "/",
+    redirect: "/home",
   },
   {
-    path: '/home',
+    path: "/home",
     component: Home,
-    name: 'home',
+    name: "home",
     meta: {
-      name: 'coder',
-      friends: 'kobe'
+      name: "coder",
+      friends: "kobe",
     },
-    children: [{
-        path: '',
-        redirect: '/home/message'
+    children: [
+      {
+        path: "",
+        redirect: "/home/message",
       },
       {
-        path: 'message',
-        component: Message
+        path: "message",
+        component: Message,
       },
       {
-        path: 'shops',
-        component: Shops
-      }
-    ]
+        path: "shops",
+        component: Shops,
+      },
+    ],
   },
   {
-    path: '/about',
-    component: About
+    path: "/about",
+    component: About,
   },
   {
-    path: '/user/:username',
+    path: "/user/:username",
     component: User,
-    name: 'user'
+    name: "user",
   },
   {
-    path: '/:pathMatch(.*)',
-    component: NotFound
+    path: "/:pathMatch(.*)",
+    component: NotFound,
   },
   {
-    path: '/login',
+    path: "/login",
     component: Login,
     // 路由的守卫和全局守卫规则一样
-    beforeEnter:(to,from)=>{
+    beforeEnter: (to, from) => {
       // console.log(to)
       // console.log(from)
       // return false
-    }
-  }
-]
+    },
+  },
+];
 
 const router = createRouter({
   routes,
-  history: createWebHistory()
-})
+  history: createWebHistory(),
+});
 
 // 动态添加路由
 // 1.创建一个顶层路由对象
 const categoryRoute = {
-  path: '/category',
+  path: "/category",
   component: Category,
-  name: 'category'
-}
+  name: "category",
+};
 
 // 添加顶层路由对象
-router.addRoute(categoryRoute)
+router.addRoute(categoryRoute);
 
 // 添加二级路由对象
-router.addRoute('home', {
-  path: 'moment',
-  component: () => import('../views/HomeMoment.vue')
-})
+router.addRoute("home", {
+  path: "moment",
+  component: () => import("../views/HomeMoment.vue"),
+});
 
 // 2.删除路由的三种方式
 // 2.1.name属性代表唯一的路由对象，添加一个一样的Name属性的路由对象，会替换原来的路由对象
 const cancelRoute = router.addRoute({
-  path: '/list',
-  component: () => import('../views/List.vue'),
-  name: 'category'
-})
+  path: "/list",
+  component: () => import("../views/List.vue"),
+  name: "category",
+});
 
 // 2.2removeRoute方法
 // 传入代表路由的惟一的name属性
@@ -133,5 +134,4 @@ const cancelRoute = router.addRoute({
 //   }
 // })
 
-
-export default router
+export default router;

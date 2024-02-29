@@ -1,3 +1,3 @@
-export default function(app){
-  console.log(app)
+export default function (app) {
+  console.log(app);
 }

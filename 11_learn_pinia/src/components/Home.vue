@@ -6,23 +6,21 @@
 </template>
 
 <script>
-  import {useMainStore} from '../store/index'
-  export default {
-    setup(){
-      const store=useMainStore()
+import { useMainStore } from '../store/index'
+export default {
+  setup() {
+    const store = useMainStore()
 
-      const add=()=>{
-        store.counter++
-      }
+    const add = () => {
+      store.counter++
+    }
 
-      return {
-        store,
-        add
-      }
+    return {
+      store,
+      add
     }
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

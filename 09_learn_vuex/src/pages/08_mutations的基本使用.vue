@@ -11,8 +11,8 @@
 
 <script>
 export default {
-  methods:{
-    addTen(){
+  methods: {
+    addTen() {
       // 1.携带的数据是变量或者常量
       // this.$store.commit('incrementN',10)
 
@@ -21,8 +21,8 @@ export default {
 
       // 3.提交commit的对象风格
       this.$store.commit({
-        type:'incrementN',
-        count:10
+        type: 'incrementN',
+        count: 10
       })
     }
   }

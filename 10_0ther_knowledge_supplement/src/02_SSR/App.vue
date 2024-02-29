@@ -17,6 +17,7 @@ export default {};
   margin: 0 auto;
   width: 700px;
 }
+
 #nav {
   margin-bottom: 20px;
   text-align: center;

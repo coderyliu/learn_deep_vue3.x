@@ -1,5 +1,5 @@
 export default {
-  install(app){
-    console.log(app)
-  }
-}
+  install(app) {
+    console.log(app);
+  },
+};

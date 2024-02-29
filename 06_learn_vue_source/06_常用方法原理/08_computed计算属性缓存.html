@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <body>
+    <div id="app"></div>
 
-<body>
-  <div id="app"></div>
-
-  <template id="coder">
-    <div>
-      <div>{{multiplication}}</div>
-      <div>{{multiplication}}</div>
-      <div>{{multiplication}}</div>
-      <div>{{multiplicationArrow}}</div>
-      <button @click="updateSetting">updateSetting</button>
-    </div>
-  </template>
-  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
-  <script>
-    const vm = new Vue({
-      el: '#app',
-      data: {
-        a: 1,
-        b: 2
-      },
-      template: '#coder',
-      computed:{
-        multiplication(){
-          console.log('a*b')
-          // console.log(this)
-          return this.a*this.b
+    <template id="coder">
+      <div>
+        <div>{{multiplication}}</div>
+        <div>{{multiplication}}</div>
+        <div>{{multiplication}}</div>
+        <div>{{multiplicationArrow}}</div>
+        <button @click="updateSetting">updateSetting</button>
+      </div>
+    </template>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          a: 1,
+          b: 2,
         },
-        multiplicationArrow:(vm)=>{
-          // console.log(this)箭头函数中的this已经失去this绑定了，指向window
-          return vm.a*vm.b*3
-        },
-        setting:{
-          get(){
-            console.log('a*b*6')
-            return this.a*this.b*6
+        template: "#coder",
+        computed: {
+          multiplication() {
+            console.log("a*b");
+            // console.log(this)
+            return this.a * this.b;
           },
-          set(v){
-            this.a=v
-          }
-        }
-      },
-      methods:{
-        updateSetting(){
-          console.log(this.setting)
-          this.setting=3
-          console.log(this.setting)
-        }
-      }
-    })
-  </script>
-</body>
-
+          multiplicationArrow: (vm) => {
+            // console.log(this)箭头函数中的this已经失去this绑定了，指向window
+            return vm.a * vm.b * 3;
+          },
+          setting: {
+            get() {
+              console.log("a*b*6");
+              return this.a * this.b * 6;
+            },
+            set(v) {
+              this.a = v;
+            },
+          },
+        },
+        methods: {
+          updateSetting() {
+            console.log(this.setting);
+            this.setting = 3;
+            console.log(this.setting);
+          },
+        },
+      });
+    </script>
+  </body>
 </html>

@@ -25,7 +25,7 @@ export default {
     // let { name, age } = toRefs(info)
 
     // 如果我们只希望转换一个reactive对象中的属性为ref, 那么可以使用toRef的方法：
-    let age=toRef(info,'age')
+    let age = toRef(info, 'age')
 
     // 改变Name属性值
     const changeInfoName = () => {
@@ -35,7 +35,7 @@ export default {
     };
     const changeInfoAge = () => {
       // info.age=20
-      age.value=20
+      age.value = 20
       console.log(age.value)
     };
 

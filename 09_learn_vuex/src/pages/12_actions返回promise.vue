@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>当前计数:{{$store.state.counter}}</h2>
+    <h2>当前计数:{{ $store.state.counter }}</h2>
     <hr>
     <button @click='incrementAction'>+1</button>
     <button @click='decrementAction'>-1</button>
@@ -11,28 +11,26 @@
 </template>
 
 <script>
-  import {mapActions,useStore} from 'vuex'
-  import {onMounted} from 'vue'
-  export default {
-    setup(){
-      const store=useStore()
+import { mapActions, useStore } from 'vuex'
+import { onMounted } from 'vue'
+export default {
+  setup() {
+    const store = useStore()
 
-      onMounted(()=>{
-        const promise=store.dispatch('getHomeMultidata')
-        promise.then(res=>{
-          console.log(res)
-        }).catch(err=>{
-          console.log(err)
-        })
+    onMounted(() => {
+      const promise = store.dispatch('getHomeMultidata')
+      promise.then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
       })
+    })
 
-      return {
-       
-      }
+    return {
+
     }
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-if="counter < 2" @click="increment" v-focus.aaa='{name:"coder",age:18}'>{{ counter }}</button>
+    <button v-if="counter < 2" @click="increment" v-focus.aaa='{ name: "coder", age: 18 }'>{{ counter }}</button>
   </div>
 </template>
 
@@ -15,9 +15,9 @@ export default {
       beforeMount() {
         console.log("app beforeMount");
       },
-      mounted(el,bindings,vNode,preVnode) {
+      mounted(el, bindings, vNode, preVnode) {
         console.log("app mounted");
-        console.log(el,bindings,vNode,preVnode)
+        console.log(el, bindings, vNode, preVnode)
       },
       beforeUpdate() {
         console.log("app beforeUpdate");

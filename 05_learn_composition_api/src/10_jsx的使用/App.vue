@@ -1,14 +1,14 @@
 <script>
 import Home from './Home.vue'
 export default {
-  data(){
+  data() {
     return {
-      counter:0
+      counter: 0
     }
   },
-  render(){
-    const increment=()=>this.counter++
-    const decrement=()=>this.counter--
+  render() {
+    const increment = () => this.counter++
+    const decrement = () => this.counter--
 
     return (
       <div>
@@ -16,7 +16,7 @@ export default {
         <button onClick={increment}>+1</button>
         <button onClick={decrement}>-1</button>
         <Home>
-            {{default:props=><span>呵呵呵</span>}}
+          {{ default: props => <span>呵呵呵</span> }}
         </Home>
       </div>
     )

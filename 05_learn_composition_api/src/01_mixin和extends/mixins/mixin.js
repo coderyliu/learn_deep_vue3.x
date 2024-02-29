@@ -1,15 +1,15 @@
-export const mix={
-  data(){
+export const mix = {
+  data() {
     return {
-      message:'Hello'
-    }
+      message: "Hello",
+    };
   },
-  methods:{
-    foo(){
-      console.log('foo function');
-    }
+  methods: {
+    foo() {
+      console.log("foo function");
+    },
   },
-  created(){
-    console.log('mixin created ');
-  }
-}
+  created() {
+    console.log("mixin created ");
+  },
+};

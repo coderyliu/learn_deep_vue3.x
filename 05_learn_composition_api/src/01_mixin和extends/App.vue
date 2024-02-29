@@ -2,7 +2,7 @@
   <div>
     <home></home>
     <about></about>
-    <h2>{{mes}}</h2>
+    <h2>{{ mes }}</h2>
   </div>
 </template>
 
@@ -17,10 +17,8 @@ export default {
     Home,
     About
   },
-  extends:Button
+  extends: Button
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

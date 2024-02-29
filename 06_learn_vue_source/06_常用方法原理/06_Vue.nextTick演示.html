@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Vue</title>
+  </head>
 
-<head>
-  <title>Vue</title>
-</head>
-
-<body>
-  <div id="app"></div>
-</body>
-<script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
-<script type="text/javascript">
-  var vm = new Vue({
-    el: '#app',
-    data: {
-      msg: 'Vue'
-    },
-    template: `
+  <body>
+    <div id="app"></div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        msg: "Vue",
+      },
+      template: `
             <div>
                 <div ref="msgElement">{{msg}}</div>
                 <button @click="updateMsg">updateMsg</button>
                 <hello />
             </div>
         `,
-    methods: {
-      updateMsg: function () {
-        this.msg = "Update";
-        console.log("DOM未更新：", this.$refs.msgElement.innerHTML)
-        this.$nextTick(() => {
-          console.log("DOM已更新：", this.$refs.msgElement.innerHTML)
-        })
-      }
-    },
-    components: {
-      Hello: {
-        template: `
+      methods: {
+        updateMsg: function () {
+          this.msg = "Update";
+          console.log("DOM未更新：", this.$refs.msgElement.innerHTML);
+          this.$nextTick(() => {
+            console.log("DOM已更新：", this.$refs.msgElement.innerHTML);
+          });
+        },
+      },
+      components: {
+        Hello: {
+          template: `
             <div>
                 <div>hello</div>
             </div>
-        `
-      }
-    }
-  })
-  console.log(vm)
-</script>
-
+        `,
+        },
+      },
+    });
+    console.log(vm);
+  </script>
 </html>

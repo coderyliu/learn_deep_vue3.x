@@ -23,9 +23,9 @@ export default {
           max: max,
         },
         // 暂且不知道做啥子用的
-        // geo: {
-        //   map: 'city',
-        // },
+        geo: {
+          map: 'city',
+        },
         grid: {
           top: 10,
           bottom: 10,
@@ -93,7 +93,7 @@ export default {
 
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300) {
-            that.$echarts.registerMap('北京', xhr.response)
+            // that.$echarts.registerMap('北京', xhr.response)
             resolve(xhr.response)
           }
         }

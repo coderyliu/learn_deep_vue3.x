@@ -1,8 +1,8 @@
 <template>
   <div>
     <hr>
-    <h2>{{homeCounter}}</h2>
-    <h2>{{doubleHomeCounter}}</h2>
+    <h2>{{ homeCounter }}</h2>
+    <h2>{{ doubleHomeCounter }}</h2>
 
     <button @click='increment'>home+1</button>
     <button @click='incrementAction'>home+1</button>
@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import {mapGetters,mapMutations,mapActions,mapState} from 'vuex'
+import { mapGetters, mapMutations, mapActions, mapState } from 'vuex'
 
-import {useState2,useGetters2} from '../hooks'
+import { useState2, useGetters2 } from '../hooks'
 // import {createNamespacedHelpers} from 'vuex'
 
 // const {mapState,mapGetters,mapMutations,mapActions}=createNamespacedHelpers('home') 
@@ -57,12 +57,12 @@ export default {
   // }
 
   // 在setup中使用
-  setup(){
-    const states=useState2('home',['homeCounter'])
-    const getters=useGetters2('home',['doubleHomeCounter'])
+  setup() {
+    const states = useState2('home', ['homeCounter'])
+    const getters = useGetters2('home', ['doubleHomeCounter'])
 
-    const mutations=mapMutations('home',['increment'])
-    const actions=mapActions('home',['incrementAction'])
+    const mutations = mapMutations('home', ['increment'])
+    const actions = mapActions('home', ['incrementAction'])
     return {
       ...states,
       ...getters,

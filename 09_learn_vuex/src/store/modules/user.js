@@ -1,21 +1,17 @@
-const userModule={
-  namespaced:true,
-  state(){
+const userModule = {
+  namespaced: true,
+  state() {
     return {
-      userCounter:1
-    }
+      userCounter: 1,
+    };
   },
-  getters:{
-    doubleUserCounter(state){
-      return state.userCounter*2
-    }
+  getters: {
+    doubleUserCounter(state) {
+      return state.userCounter * 2;
+    },
   },
-  mutations:{
+  mutations: {},
+  actions: {},
+};
 
-  },
-  actions:{
-
-  }
-}
-
-export default userModule
+export default userModule;

@@ -1,90 +1,88 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Vue生命周期</title>
+  </head>
 
-<head>
-  <title>Vue生命周期</title>
-</head>
-
-<body>
-  <div id="app">
-    <div>{{msg}}</div>
-    <button @click="updateMsg">updateMsg</button>
-    <button @click="destroyVue">destroyVue</button>
-  </div>
-</body>
-<script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
-<script type="text/javascript">
-  var vm = new Vue({
-    el: '#app',
-    data: {
-      msg: 'Vue Lifecycle'
-    },
-    beforeCreate: function () {
-      console.log("beforeCreate");
-      console.log(this.$el); //undefined
-      console.log(this.$data); //undefined 
-      console.log(this.msg); // undefined
-      console.log("--------------------");
-    },
-    created: function () {
-      console.log("created");
-      console.log(this.$el); //undefined
-      console.log(this.$data); //{__ob__: Observer} 
-      console.log(this.msg); // Vue Lifecycle
-      console.log("--------------------");
-    },
-    beforeMount: function () {
-      console.log("beforeMount");
-      console.log(this.$el); //<div id="app">...</div>
-      console.log(this.$data); // {__ob__: Observer}
-      console.log(this.msg); // Vue Lifecycle
-      console.log("--------------------");
-    },
-    mounted: function () {
-      console.log("mounted");
-      console.log(this.$el); //<div id="app">...</div>
-      console.log(this.$data); //{__ob__: Observer} 
-      console.log(this.msg); // Vue Lifecycle
-      console.log("--------------------");
-    },
-    beforeUpdate: function () {
-      console.log("beforeUpdate");
-      console.log(this.$el);
-      console.log(this.$data);
-      console.log(this.msg);
-      debugger;
-      console.log("--------------------");
-    },
-    updated: function () {
-      console.log("updated");
-      console.log(this.$el);
-      console.log(this.$data);
-      console.log(this.msg);
-      console.log("--------------------");
-    },
-    beforeDestroy: function () {
-      console.log("beforeDestroy");
-      console.log(this.$el);
-      console.log(this.$data);
-      console.log(this.msg);
-      console.log("--------------------");
-    },
-    destroyed: function () {
-      console.log("destroyed");
-      console.log(this.$el);
-      console.log(this.$data);
-      console.log(this.msg);
-      console.log("--------------------");
-    },
-    methods: {
-      updateMsg: function () {
-        this.msg = "Vue Update";
+  <body>
+    <div id="app">
+      <div>{{msg}}</div>
+      <button @click="updateMsg">updateMsg</button>
+      <button @click="destroyVue">destroyVue</button>
+    </div>
+  </body>
+  <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        msg: "Vue Lifecycle",
       },
-      destroyVue: function () {
-        this.$destroy();
-      }
-    }
-  })
-</script>
-
+      beforeCreate: function () {
+        console.log("beforeCreate");
+        console.log(this.$el); //undefined
+        console.log(this.$data); //undefined
+        console.log(this.msg); // undefined
+        console.log("--------------------");
+      },
+      created: function () {
+        console.log("created");
+        console.log(this.$el); //undefined
+        console.log(this.$data); //{__ob__: Observer}
+        console.log(this.msg); // Vue Lifecycle
+        console.log("--------------------");
+      },
+      beforeMount: function () {
+        console.log("beforeMount");
+        console.log(this.$el); //<div id="app">...</div>
+        console.log(this.$data); // {__ob__: Observer}
+        console.log(this.msg); // Vue Lifecycle
+        console.log("--------------------");
+      },
+      mounted: function () {
+        console.log("mounted");
+        console.log(this.$el); //<div id="app">...</div>
+        console.log(this.$data); //{__ob__: Observer}
+        console.log(this.msg); // Vue Lifecycle
+        console.log("--------------------");
+      },
+      beforeUpdate: function () {
+        console.log("beforeUpdate");
+        console.log(this.$el);
+        console.log(this.$data);
+        console.log(this.msg);
+        debugger;
+        console.log("--------------------");
+      },
+      updated: function () {
+        console.log("updated");
+        console.log(this.$el);
+        console.log(this.$data);
+        console.log(this.msg);
+        console.log("--------------------");
+      },
+      beforeDestroy: function () {
+        console.log("beforeDestroy");
+        console.log(this.$el);
+        console.log(this.$data);
+        console.log(this.msg);
+        console.log("--------------------");
+      },
+      destroyed: function () {
+        console.log("destroyed");
+        console.log(this.$el);
+        console.log(this.$data);
+        console.log(this.msg);
+        console.log("--------------------");
+      },
+      methods: {
+        updateMsg: function () {
+          this.msg = "Vue Update";
+        },
+        destroyVue: function () {
+          this.$destroy();
+        },
+      },
+    });
+  </script>
 </html>

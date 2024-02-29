@@ -1,23 +1,23 @@
 <template>
   <div>
-    <h2>当前计数:{{counter}}</h2>
-    <h2>当前计数*2:{{doubleCounter}}</h2>
+    <h2>当前计数:{{ counter }}</h2>
+    <h2>当前计数*2:{{ doubleCounter }}</h2>
     <button @click='increment'>+1</button>
     <button @click='decrement'>-1</button>
 
-    <h2>{{res}}</h2>
+    <h2>{{ res }}</h2>
     <button @click='changeData'>修改res</button>
 
     <p class='content'></p>
 
     <div class="scroll">
-      <div class="scroll-x">scrollX:{{scrollX}}</div>
-      <div class="scroll-y">scrollY:{{scrollY}}</div>
+      <div class="scroll-x">scrollX:{{ scrollX }}</div>
+      <div class="scroll-y">scrollY:{{ scrollY }}</div>
     </div>
 
     <div class="mouse">
-      <div class="mouse-x">mouseX:{{mouseX}}</div>
-      <div class="mouse-y">mouseY:{{mouseY}}</div>
+      <div class="mouse-x">mouseX:{{ mouseX }}</div>
+      <div class="mouse-y">mouseY:{{ mouseY }}</div>
     </div>
   </div>
 </template>
@@ -32,24 +32,24 @@ import useLocalStorage from './hooks/useLocalStorage'
 export default {
   setup() {
     // useCounter
-    const {counter,doubleCounter,increment,decrement} =useCounter()
+    const { counter, doubleCounter, increment, decrement } = useCounter()
 
     // useTitle
-    const data=useTitle('coder liu')
-    setTimeout(()=>{
-      data.value='kobe'
-    },2000)
+    const data = useTitle('coder liu')
+    setTimeout(() => {
+      data.value = 'kobe'
+    }, 2000)
 
     // 滚动位置
-    const {scrollX,scrollY}=useScrollPosition()
+    const { scrollX, scrollY } = useScrollPosition()
 
     // 鼠标移动
-    const {mouseX,mouseY} =useMousePosition()
+    const { mouseX, mouseY } = useMousePosition()
 
     // localStorage
-    const res=useLocalStorage('name','coder')
-    const changeData=()=>{
-      res.value='kobe'
+    const res = useLocalStorage('name', 'coder')
+    const changeData = () => {
+      res.value = 'kobe'
     }
 
     return {
@@ -70,19 +70,20 @@ export default {
 </script>
 
 <style scoped>
-.content{
+.content {
   width: 3000px;
   height: 5000px;
 }
 
-.scroll{
+.scroll {
   position: fixed;
-  right:30px;
-  bottom:30px;
+  right: 30px;
+  bottom: 30px;
 }
-.mouse{
+
+.mouse {
   position: fixed;
-  right:30px;
-  bottom:80px;
+  right: 30px;
+  bottom: 80px;
 }
 </style>

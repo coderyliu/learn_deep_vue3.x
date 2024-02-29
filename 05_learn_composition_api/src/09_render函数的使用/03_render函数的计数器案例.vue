@@ -8,13 +8,13 @@ export default {
   },
   render() {
     return h("div", { class: "title" }, [
-      h('h2',null,`当前计数:${this.counter}`),
-      h('button',{
-        onClick:()=>this.counter++
-      },'+1'),
-      h('button',{
-        onClick:()=>this.counter--
-      },'-1')
+      h('h2', null, `当前计数:${this.counter}`),
+      h('button', {
+        onClick: () => this.counter++
+      }, '+1'),
+      h('button', {
+        onClick: () => this.counter--
+      }, '-1')
     ]);
   },
 };

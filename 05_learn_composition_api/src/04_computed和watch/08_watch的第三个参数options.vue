@@ -1,26 +1,26 @@
 <template>
   <div>
-    <h2 ref='title'>{{info.name}}</h2>
+    <h2 ref='title'>{{ info.name }}</h2>
     <button @click='changeData'>修改数据</button>
   </div>
 </template>
 
 <script>
-import { ref, watch,reactive} from "vue";
+import { ref, watch, reactive } from "vue";
 
 export default {
   setup() {
-    const info=reactive({name:"coder",age:18,friend:{name:'kobe'}})
+    const info = reactive({ name: "coder", age: 18, friend: { name: 'kobe' } })
 
-    watch([()=>({...info})],(newValue,oldValue)=>{
-      console.log('newValue:',newValue,'oldValue:',oldValue);
-    },{
-      deep:true
+    watch([() => ({ ...info })], (newValue, oldValue) => {
+      console.log('newValue:', newValue, 'oldValue:', oldValue);
+    }, {
+      deep: true
     })
 
-    const changeData=()=>{
+    const changeData = () => {
       // name.value='liu'
-      info.friend.name='curry'
+      info.friend.name = 'curry'
     }
     return {
       info,

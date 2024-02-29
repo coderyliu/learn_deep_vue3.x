@@ -3,7 +3,7 @@
     <h2>{{ refInfo.name }}</h2>
     <h2>{{ refInfo.age }}</h2>
 
-    <h2>{{shallowRefInfo.name}}</h2>
+    <h2>{{ shallowRefInfo.name }}</h2>
     <button @click="changeInfoName">改变info.name</button>
     <button @click="changeInfoAge">改变info.age</button>
     <button @click="changeShallowInfoName">改变shallowInfo.name</button>
@@ -25,24 +25,25 @@ export default {
     const info = ref({ name: "coder", age: 18, friend: { name: "kobe", age: 33 } });
 
     // shallowRef创建浅层ref响应式对象
-    const shallowInfo=shallowRef({ name: "coder", age: 18, friend: { name: "kobe", age: 33 } })
+    const shallowInfo = shallowRef({ name: "coder", age: 18, friend: { name: "kobe", age: 33 } })
 
-    const refInfo=unref(info)
-    const shallowRefInfo=unref(shallowInfo)
+    const refInfo = unref(info)
+    const shallowRefInfo = unref(shallowInfo)
     console.log(shallowRefInfo)
     // 改变Name属性值
     const changeInfoName = () => {
       // 获取ref中的value还可以通过unref方法
-      refInfo.name='curry'
+      refInfo.name = 'curry'
     };
     const changeInfoAge = () => {
-      refInfo.age=20
+      refInfo.age = 20
     };
 
-    const changeShallowInfoName=()=>{
-      shallowRefInfo.name='kobe'
+    const changeShallowInfoName = () => {
+      shallowRefInfo.name = 'kobe'
       console.log(shallowRefInfo)
     }
+    triggerRef(shallowInfo)
     // 判断是否是ref响应式对象
     console.log(isRef(info))
     return {

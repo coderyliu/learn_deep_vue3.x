@@ -15,5 +15,3 @@
 // stop:阻止事件冒泡   prevent:阻止事件的默认行为
 // left:鼠标左键触发   right:鼠标右键触发  middle:鼠标中间触发
 // once:事件只会执行一次   keyCode:特定的键值触发
-
-

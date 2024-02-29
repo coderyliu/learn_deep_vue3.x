@@ -1,14 +1,12 @@
 class VueRouter {
-  constructor(options) {
-
-  }
+  constructor(options) {}
 
   init(app) {}
 }
 
-let _Vue
+let _Vue;
 VueRouter.install = (Vue) => {
-  _Vue = Vue
+  _Vue = Vue;
 
   // 使用VUe.mixin混入每一个组件
   Vue.mixin({
@@ -18,13 +16,13 @@ VueRouter.install = (Vue) => {
         // 如果是根组件，执行根组件的this.$router.init()方法
       } else {
         // 非根组件
-        this._routerRoot = this.$parent && this.$parent._routerRoot
+        this._routerRoot = this.$parent && this.$parent._routerRoot;
 
         // 子组件也要挂上$router
-        this.$router = this._routerRoot.$router
+        this.$router = this._routerRoot.$router;
       }
     },
-  })
-}
+  });
+};
 
-export default VueRouter
+export default VueRouter;

@@ -5,18 +5,16 @@
 </template>
 
 <script>
-  export default {
-    directives:{
-      focus:{
-        mounted(el,bindings,vNode,preVnode){
-          console.log(el,bindings,vNode,preVnode)
-          el.focus()
-        }
+export default {
+  directives: {
+    focus: {
+      mounted(el, bindings, vNode, preVnode) {
+        console.log(el, bindings, vNode, preVnode)
+        el.focus()
       }
     }
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

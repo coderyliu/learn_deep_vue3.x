@@ -1,15 +1,15 @@
-import axios from 'axios'
+import axios from "axios";
 
-const searchSubjects='http://movie.douban.com/j/search_subjects'
+const searchSubjects = "http://movie.douban.com/j/search_subjects";
 
-export function top20(){
-  return axios.get(searchSubjects,{
-    params:{
-      type:'movie',
-      tag:'豆瓣高分',
-      sort:'rank',
-      page_limit:20,
-      page_start:0
-    }
-  })
+export function top20() {
+  return axios.get(searchSubjects, {
+    params: {
+      type: "movie",
+      tag: "豆瓣高分",
+      sort: "rank",
+      page_limit: 20,
+      page_start: 0,
+    },
+  });
 }

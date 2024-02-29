@@ -20,17 +20,17 @@
 
 <script>
 // @ is an alias to /src
-import {useRouter} from 'vue-router'
+import { useRouter } from 'vue-router'
 export default {
-  setup(){
-    const router=useRouter()
+  setup() {
+    const router = useRouter()
 
-    const jumpBtn=()=>{
+    const jumpBtn = () => {
       // router.push('/home/shops')
       router.push({
-        path:'/home/shops',
-        query:{
-          name:'kobe'
+        path: '/home/shops',
+        query: {
+          name: 'kobe'
         }
       })
     }

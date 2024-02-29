@@ -5,20 +5,18 @@
 </template>
 
 <script>
-  export default {
-    data(){
-      return {
-        mes:'hello'
-      }
-    },
-    methods:{
-      foo(){
-        console.log('foo function');
-      }
+export default {
+  data() {
+    return {
+      mes: 'hello'
+    }
+  },
+  methods: {
+    foo() {
+      console.log('foo function');
     }
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

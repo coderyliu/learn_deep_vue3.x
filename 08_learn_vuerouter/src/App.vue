@@ -26,19 +26,19 @@
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {
+
+}
 </script>
 
 <style scoped>
-  .coder-leave-to,
-  .coder-enter-from{
-    opacity:0;
-  }
+.coder-leave-to,
+.coder-enter-from {
+  opacity: 0;
+}
 
-  .coder-leave-active,
-  .coder-enter-active{
-    transition:opacity 1s ease;
-  }
+.coder-leave-active,
+.coder-enter-active {
+  transition: opacity 1s ease;
+}
 </style>

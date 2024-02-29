@@ -35,6 +35,7 @@ export default {
 .movie-list {
   width: 700px;
 }
+
 .movie {
   height: 240px;
   width: 120px;
@@ -45,14 +46,16 @@ export default {
   font-size: 12px;
   margin-right: 15px;
 }
+
 .cover {
   width: 120px;
   height: 180px;
 }
+
 .title {
   color: #37a;
 }
+
 .rate {
   color: #e09015;
-}
-</style>
+}</style>

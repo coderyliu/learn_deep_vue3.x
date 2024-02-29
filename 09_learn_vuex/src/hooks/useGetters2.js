@@ -1,24 +1,24 @@
-import {createNamespacedHelpers,mapGetters,useStore} from 'vuex'
-import {computed} from 'vue'
+import { createNamespacedHelpers, mapGetters, useStore } from "vuex";
+import { computed } from "vue";
 
-export function useGetters2(moduleName,mapper){
-  const store=useStore()
-  let mapFn=mapGetters
+export function useGetters2(moduleName, mapper) {
+  const store = useStore();
+  let mapFn = mapGetters;
 
-  const storeGetters={}
-  if(typeof moduleName==='string'&&moduleName.length>0){
-    mapFn=createNamespacedHelpers(moduleName).mapGetters
-  }else{
-    mapper=moduleName
+  const storeGetters = {};
+  if (typeof moduleName === "string" && moduleName.length > 0) {
+    mapFn = createNamespacedHelpers(moduleName).mapGetters;
+  } else {
+    mapper = moduleName;
   }
 
-  const storeGettersFns=mapFn(mapper)
-  
-  Object.keys(storeGettersFns).forEach(fnKey=>{
-    const fn=storeGettersFns[fnKey].bind({$store:store})
+  const storeGettersFns = mapFn(mapper);
 
-    storeGetters[fnKey]=computed(fn)
-  })
+  Object.keys(storeGettersFns).forEach((fnKey) => {
+    const fn = storeGettersFns[fnKey].bind({ $store: store });
 
-  return storeGetters
+    storeGetters[fnKey] = computed(fn);
+  });
+
+  return storeGetters;
 }

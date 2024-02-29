@@ -5,29 +5,27 @@
 </template>
 
 <script>
-  import {useRouter} from 'vue-router'
-  export default {
-    beforeRouteEnter (to, from, next) {
-      
-    },
-    setup(){
-      const router=useRouter()
+import { useRouter } from 'vue-router'
+export default {
+  beforeRouteEnter(to, from, next) {
 
-      const loginClick=()=>{
-        window.localStorage.setItem('token','ncoiewncosdlncodsaklncods')
+  },
+  setup() {
+    const router = useRouter()
 
-        router.push({
-          path:'/home'
-        })
-      }
+    const loginClick = () => {
+      window.localStorage.setItem('token', 'ncoiewncosdlncodsaklncods')
 
-      return {
-        loginClick
-      }
+      router.push({
+        path: '/home'
+      })
+    }
+
+    return {
+      loginClick
     }
   }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

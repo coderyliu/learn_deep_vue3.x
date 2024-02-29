@@ -1,21 +1,21 @@
-import {customRef} from 'vue'
+import { customRef } from "vue";
 
 // 自定义Ref
-export default function(value,delay=300){
-  let timer=null
-  return customRef((track,trigger)=>{
+export default function (value, delay = 300) {
+  let timer = null;
+  return customRef((track, trigger) => {
     return {
-      get(){
-        track()
-        return value
+      get() {
+        track();
+        return value;
       },
-      set(newValue){
-        if(timer) clearTimeout(timer)
-        timer=setTimeout(()=>{
-          value=newValue
-          trigger()  
-        },delay)
-      }
-    }
-  })
+      set(newValue) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+          value = newValue;
+          trigger();
+        }, delay);
+      },
+    };
+  });
 }

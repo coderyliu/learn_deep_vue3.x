@@ -18,7 +18,7 @@ export default {
     // watchEffect侦听
     // 他会返回一个函数，这个函数用来停止侦听
     const stop = watchEffect(() => {
-      console.log("watchEffect自动侦听:", name.value,age.value);
+      console.log("watchEffect自动侦听:", name.value, age.value);
     });
 
     const changeName = () => {

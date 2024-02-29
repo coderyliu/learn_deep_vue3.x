@@ -4,44 +4,45 @@
 // 同一个插件只会被安装一次
 
 // 原理：vue2.x实现代码
-export default function Use(plugin){
+export default function Use(plugin) {
   // 首先会判断插件是否被安装过,先获取所有插件,this指的是Vue对象
-  const installedPlugins=(this._installedPlugins||(this._installedPlugins=[]))
-  if(installedPlugins.indexOf(plugin)>-1){
-    return this//如果被安装过，直接返回
+  const installedPlugins =
+    this._installedPlugins || (this._installedPlugins = []);
+  if (installedPlugins.indexOf(plugin) > -1) {
+    return this; //如果被安装过，直接返回
   }
   // 接着，把 use的参数转为数组用apply函数调用plugin
-  const args=toArray(arguments,1)
-  args.unshift(this)
+  const args = toArray(arguments, 1);
+  args.unshift(this);
 
   // 然后判断plugin书不是一个函数
-  if(typeof plugin==='function'){
+  if (typeof plugin === "function") {
     // 执行
-    plugin.apply(null,args)
-  }else if(typeof plugins.install==='function'){
-    plugin.install.apply(plugin,args)
+    plugin.apply(null, args);
+  } else if (typeof plugins.install === "function") {
+    plugin.install.apply(plugin, args);
   }
 
   // 添加到数组中
-  installedPlugins.push(plugin)
-  return this
+  installedPlugins.push(plugin);
+  return this;
 }
 // Vue3.x的use的原理
 // 3.x中的use用了一个set结构存储已经安装的插件
-function Use(plugin,...options){
-  if(installedPlugins.has(plugin)){
+function Use(plugin, ...options) {
+  if (installedPlugins.has(plugin)) {
     // 如果有，报警告
-  }else if(plugin&&isFunction(plugin.install)){
+  } else if (plugin && isFunction(plugin.install)) {
     // 接着判断install方法是不是一个函数,如果是，添加到set中并执行
-    installedPlugins.add(plugin)
-    plugin.install(app,...options)
-  }else if(isFunction(plugin)){
+    installedPlugins.add(plugin);
+    plugin.install(app, ...options);
+  } else if (isFunction(plugin)) {
     // 如果plugin是一个函数，直接执行
-    installedPlugins.add(plugin)
-    plugin(app,...options)
-  }else{
+    installedPlugins.add(plugin);
+    plugin(app, ...options);
+  } else {
     // 如果都不符合，报警告
   }
 
-  return app
+  return app;
 }

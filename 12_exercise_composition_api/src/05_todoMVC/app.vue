@@ -2,44 +2,21 @@
   <section class="todoapp">
     <header class="header">
       <h1>todos</h1>
-      <input
-        type="text"
-        class="new-todo"
-        autofocus
-        placeholder="What needs to be done?"
-        @keyup.enter="addTodo"
-      />
+      <input type="text" class="new-todo" autofocus placeholder="What needs to be done?" @keyup.enter="addTodo" />
     </header>
     <section class="main">
-      <input
-        type="checkbox"
-        id="toggle-all"
-        class="toggle-all"
-        :checked="remaining === 0"
-        @change="toggleAll"
-      />
+      <input type="checkbox" id="toggle-all" class="toggle-all" :checked="remaining === 0" @change="toggleAll" />
       <label for="toggle-all">Mark all as complete</label>
       <ul class="todo-list">
-        <li
-          v-for="todo in filteredTodos"
-          :key="todo.id"
-          class="todo"
-          :class="{ completed: todo.completed, editing: todo === editedTodo }"
-        >
+        <li v-for="todo in filteredTodos" :key="todo.id" class="todo"
+          :class="{ completed: todo.completed, editing: todo === editedTodo }">
           <div class="view">
             <input type="checkbox" class="toggle" v-model="todo.completed" />
             <label @dblclick="editTodo(todo)">{{ todo.title }}</label>
             <button class="destroy" @click="removeTodo(todo)"></button>
           </div>
-          <input
-            type="text"
-            v-if="todo === editedTodo"
-            class="edit"
-            v-model="todo.title"
-            @blur="doneEdit(todo)"
-            @keyup.enter="doneEdit(todo)"
-            @keyup.escape="cancelEdit(todo)"
-          />
+          <input type="text" v-if="todo === editedTodo" class="edit" v-model="todo.title" @blur="doneEdit(todo)"
+            @keyup.enter="doneEdit(todo)" @keyup.escape="cancelEdit(todo)" />
         </li>
       </ul>
     </section>
@@ -56,16 +33,10 @@
           <a href="#/active" :class="{ selected: visibility === 'active' }">Active</a>
         </li>
         <li>
-          <a href="#/completed" :class="{ selected: visibility === 'completed' }"
-            >Completed</a
-          >
+          <a href="#/completed" :class="{ selected: visibility === 'completed' }">Completed</a>
         </li>
       </ul>
-      <button
-        class="clear-completed"
-        @click="removeCompleted"
-        v-show="todos.length > remaining"
-      >
+      <button class="clear-completed" @click="removeCompleted" v-show="todos.length > remaining">
         Clear completed
       </button>
     </footer>
@@ -294,14 +265,15 @@ body {
 .toggle-all {
   width: 1px;
   height: 1px;
-  border: none; /* Mobile Safari */
+  border: none;
+  /* Mobile Safari */
   opacity: 0;
   position: absolute;
   right: 100%;
   bottom: 100%;
 }
 
-.toggle-all + label {
+.toggle-all+label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -313,7 +285,7 @@ body {
   left: -0;
 }
 
-.toggle-all + label:before {
+.toggle-all+label:before {
   content: "❯";
   display: inline-block;
   font-size: 22px;
@@ -323,7 +295,7 @@ body {
   transform: rotate(90deg);
 }
 
-.toggle-all:checked + label:before {
+.toggle-all:checked+label:before {
   color: #484848;
 }
 
@@ -368,7 +340,8 @@ body {
   top: 0;
   bottom: 0;
   margin: auto 0;
-  border: none; /* Mobile Safari */
+  border: none;
+  /* Mobile Safari */
   -webkit-appearance: none;
   appearance: none;
 }
@@ -377,7 +350,7 @@ body {
   opacity: 0;
 }
 
-.todo-list li .toggle + label {
+.todo-list li .toggle+label {
   /*
 		Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433
 		IE and Edge requires *everything* to be escaped to render, so we do that instead of just the `#` - https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7157459/
@@ -387,7 +360,7 @@ body {
   background-position: center left;
 }
 
-.todo-list li .toggle:checked + label {
+.todo-list li .toggle:checked+label {
   background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%2359A193%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20fill%3D%22%233EA390%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22%2F%3E%3C%2Fsvg%3E");
 }
 
@@ -544,6 +517,7 @@ html .clear-completed:active {
 	Can't use it globally since it destroys checkboxes in Firefox
 */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
   .toggle-all,
   .todo-list li .toggle {
     background: none;
@@ -565,8 +539,8 @@ html .clear-completed:active {
 }
 
 :focus,
-.toggle:focus + label,
-.toggle-all:focus + label {
+.toggle:focus+label,
+.toggle-all:focus+label {
   box-shadow: 0 0 2px 2px #cf7d7d;
   outline: 0;
 }

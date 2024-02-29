@@ -62,7 +62,7 @@ const options = {
     {
       name: '销量',
       type: 'map',
-      map:'china',
+      map: 'china',
       // coordinateSystem: 'geo',
       // data: convertData(props.mapData),
       data: [
@@ -124,7 +124,7 @@ const options = {
 
 onMounted(() => {
   // 初始化echarts
-  const echartsInstance = echarts.init(echartDivRef.value,'dark')
+  const echartsInstance = echarts.init(echartDivRef.value, 'dark')
 
   var resizeMyChartContainer = function () {
     echartDivRef.value.style.width = 100 + "%";
@@ -138,6 +138,4 @@ onMounted(() => {
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

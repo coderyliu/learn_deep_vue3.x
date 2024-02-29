@@ -6,51 +6,51 @@
 </template>
 
 <script setup>
-import {ref,computed} from 'vue'
-import {marked} from 'marked'
-import {debounce} from 'lodash-es'
+import { ref, computed } from 'vue'
+import { marked } from 'marked'
+import { debounce } from 'lodash-es'
 
-const input=ref('# hello')
+const input = ref('# hello')
 // marked()方法将值转换为html格式
-const output=computed(()=>marked(input.value))
+const output = computed(() => marked(input.value))
 
-const update=debounce((e)=>{
-  input.value=e.target.value
-},100)
+const update = debounce((e) => {
+  input.value = e.target.value
+}, 100)
 
 </script>
 
 <style scoped>
-body{
-  margin:0;
+body {
+  margin: 0;
 }
 
-.editor{
+.editor {
   height: 100vh;
   display: flex;
 }
 
 .input,
-.output{
+.output {
   overflow: hidden;
   width: 50%;
   height: 100%;
-  box-sizing:border-box;
-  padding:0 20px;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
-.input{
-  border:none;
-  border-right:1px solid #ccc;
+.input {
+  border: none;
+  border-right: 1px solid #ccc;
   resize: none;
   outline: none;
   background-color: #f6f6f6;
   font-size: 14px;
-  font-family: 'Monaco',courier,monospace;
+  font-family: 'Monaco', courier, monospace;
   padding: 20px;
 }
 
-code{
-  color:#f66;
+code {
+  color: #f66;
 }
 </style>

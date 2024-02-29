@@ -1,6 +1,6 @@
 <template>
   <form id="search">Search <input type="text" name="query" v-model="searchQuery" /></form>
-  <!-- <DemoGrid :data="gridData" :filterKey="searchQuery" :columns="gridColumns"></DemoGrid> -->
+  <DemoGrid :data="gridData" :filterKey="searchQuery" :columns="gridColumns"></DemoGrid>
 </template>
 
 <script setup>

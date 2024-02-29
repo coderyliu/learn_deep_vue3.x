@@ -1,8 +1,8 @@
 <template>
-  <button id="show-modal" @click='showModal=true'>Show Modal</button>
+  <button id="show-modal" @click='showModal = true'>Show Modal</button>
 
   <teleport to='body'>
-    <Modal :show='showModal' @close='showModal=false'>
+    <Modal :show='showModal' @close='showModal = false'>
       <template #header>
         <h3>custom header</h3>
       </template>
@@ -12,9 +12,9 @@
 
 <script setup>
 import Modal from './modal.vue'
-import {ref} from 'vue'
+import { ref } from 'vue'
 
-const showModal=ref(false)
+const showModal = ref(false)
 
 </script>
 

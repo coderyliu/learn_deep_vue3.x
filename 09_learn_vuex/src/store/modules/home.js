@@ -15,7 +15,14 @@ const homeModule = {
   },
   mutations: {
     increment(state) {
+      console.log("sync1");
       state.homeCounter++;
+      console.log("sync2");
+    },
+    decrement(state) {
+      console.log("sync1");
+      state.homeCounter--;
+      console.log("sync2");
     },
   },
   actions: {
@@ -27,8 +34,22 @@ const homeModule = {
       context.commit("increment", null, { root: true });
     },
     decrementAction({ state }) {
+      console.log("async1");
       const { homeCounter } = state;
       console.log(homeCounter);
+      console.log("async2");
+    },
+    decrementActionTwo({ state }) {
+      console.log("async1");
+      new Promise((resolve) => {
+        setTimeout(() => {
+          console.log("async ing2~");
+          resolve();
+        }, 2000);
+      }).then(() => {
+        console.log("async ing~");
+      });
+      console.log("async2");
     },
   },
 };

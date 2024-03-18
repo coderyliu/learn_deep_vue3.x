@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Home from './pages/16_vuex结构响应式测试'
+import Home from './pages/17_同步异步测试'
 export default {
   components: {
     Home

@@ -1,0 +1,33 @@
+body {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+p,
+span {
+  font-size: 14px;
+}
+
+.van-tabs__wrap {
+  margin-bottom: 16px;
+}
+
+.van-field {
+  margin-bottom: 16px;
+}
+
+.van-checkbox-group {
+  margin-bottom: 16px;
+}
+
+.task-cards {
+  .van-card {
+    margin-bottom: 16px;
+  }
+}
